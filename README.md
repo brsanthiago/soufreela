@@ -18,7 +18,7 @@ daí é só cadastrar os projetos para podermos ter uma base da renda mensal.
 # O que vamos utilizar?
 
 * Java 8
-* ORM Lite  para persistência de dados no SQLite
+* ORM Lite  para persistência de dados no SQLite  / Firebase RealTime Database
 * Retro Lambda
 * Material Design
 * MVP
