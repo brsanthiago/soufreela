@@ -22,4 +22,8 @@ daí é só cadastrar os projetos para podermos ter uma base da renda mensal.
 * Retro Lambda
 * Material Design
 * MVP
+* Butter Knife para Injeção de View 
+* Dagger para Injeção de Dependências 
+* Espresso para Testes de View
+* JUnit para Testes Unitários
 
