@@ -1,13 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_calcula_hora"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="br.com.brsantiago.soufreela.view.CalculaHoraActivity">
 
-</RelativeLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tiValorMes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="17dp">
+
+        <EditText
+            android:id="@+id/edValorMes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/valor_mes"
+            android:inputType="numberDecimal" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tiHoraDia"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintLeft_toLeftOf="@+id/tiValorMes"
+        app:layout_constraintRight_toRightOf="@+id/tiValorMes"
+        app:layout_constraintTop_toBottomOf="@+id/tiValorMes">
+
+        <EditText
+            android:id="@+id/edHoraDia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/horas_dia"
+            android:inputType="numberSigned" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tiDiaSemana"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintLeft_toLeftOf="@+id/tiHoraDia"
+        app:layout_constraintRight_toRightOf="@+id/tiHoraDia"
+        app:layout_constraintTop_toBottomOf="@+id/tiHoraDia">
+
+        <EditText
+            android:id="@+id/edDiaSemana"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/dias_semana"
+            android:inputType="numberSigned" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tiSemanaAno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintLeft_toLeftOf="@+id/tiDiaSemana"
+        app:layout_constraintRight_toRightOf="@+id/tiDiaSemana"
+        app:layout_constraintTop_toBottomOf="@+id/tiDiaSemana">
+
+        <EditText
+            android:id="@+id/edFolgaAno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/folga_ano"
+            android:inputType="numberSigned" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="@string/save"
+        app:layout_constraintLeft_toLeftOf="@+id/tiSemanaAno"
+        app:layout_constraintRight_toRightOf="@+id/tiSemanaAno"
+        app:layout_constraintTop_toBottomOf="@+id/tiSemanaAno" />
+</android.support.constraint.ConstraintLayout>

@@ -3,22 +3,37 @@ package br.com.brsantiago.soufreela.domain.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.ForeignCollectionField;
+import com.j256.ormlite.table.DatabaseTable;
+
 import java.util.Date;
 
 /**
  * Created by bruno.santiago on 13/10/2016.
  */
 
+@DatabaseTable(tableName = "projeto")
 public class Projeto implements Parcelable {
 
+    @DatabaseField(generatedId = true)
     public long id;
+    @DatabaseField
     public String nome;
+    @DatabaseField
     public Date dataInicial;
+    @DatabaseField
     public Date dataFinal;
+    @DatabaseField
     public Integer horaDia;
+    @DatabaseField
     public Integer qtdeDia;
+    @DatabaseField
     public Double valorProjeto;
-    public ValorHora valorHora;
+    @DatabaseField
+    public Double valorHora;
+
+    public Projeto(){}
 
     protected Projeto(Parcel in) {
         id = in.readLong();
@@ -28,7 +43,7 @@ public class Projeto implements Parcelable {
         dataInicial = (Date) in.readSerializable();
         dataFinal = (Date) in.readSerializable();
         valorProjeto = in.readDouble();
-        valorHora = in.readParcelable(ValorHora.class.getClassLoader());
+        valorHora = in.readDouble();
     }
 
     @Override
@@ -40,7 +55,7 @@ public class Projeto implements Parcelable {
         dest.writeSerializable(dataInicial);
         dest.writeSerializable(dataFinal);
         dest.writeDouble(valorProjeto);
-        dest.writeParcelable(valorHora, flags);
+        dest.writeDouble(valorHora);
     }
 
     @Override
@@ -59,4 +74,9 @@ public class Projeto implements Parcelable {
             return new Projeto[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return "Projeto Name: "+ nome;
+    }
 }
