@@ -1,4 +1,4 @@
-package br.com.brsantiago.soufreela.model.domain;
+package br.com.brsantiago.soufreela.domain.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

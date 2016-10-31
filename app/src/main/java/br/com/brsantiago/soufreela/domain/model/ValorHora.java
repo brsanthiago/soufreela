@@ -1,9 +1,7 @@
-package br.com.brsantiago.soufreela.model.domain;
+package br.com.brsantiago.soufreela.domain.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-
-import java.util.Date;
 
 /**
  * Created by bruno.santiago on 13/10/2016.
@@ -11,13 +9,17 @@ import java.util.Date;
 
 public class ValorHora implements Parcelable {
 
+    public long id;
     public Double valorMes;
     public Integer horaDia;
     public Integer diaSemana;
     public Integer folgaSemana;
     public Double valorDia;
 
+    public ValorHora(){};
+
     protected ValorHora(Parcel in) {
+        id = in.readLong();
         valorMes = in.readDouble();
         horaDia = in.readInt();
         diaSemana = in.readInt();
@@ -27,6 +29,7 @@ public class ValorHora implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(id);
         dest.writeDouble(valorMes);
         dest.writeInt(horaDia);
         dest.writeInt(diaSemana);
